@@ -1,0 +1,68 @@
+<div class="banner-image contact-us">
+    <h2 class="text-center">Contact Us</h2>
+</div>
+<div class="container contact-us">
+    <div class="detail-section mt40 mb40">
+        <form class="contact-form" ngNoForm action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" name="mycontact-form"
+        method="POST">
+            <input type=hidden name="orgid" value="00D0N000001P1XD">
+            <input type=hidden name="retURL" value="http://www.rentandrent.co.za/">
+            <input type=hidden name='type' value="rentandrent General Queries" />
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="field form-group">
+                        <label for="name">Name</label>
+                        <input id="name" class="name form-control" maxlength="80" autocomplete="off" name="name" value="" type="text" placeholder="Enter Name"
+                        />
+                        <span id="name_error" class="text-danger error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="field form-group">
+                        <label for="email">Email</label>
+                        <input id="email" maxlength="80" class="form-control" name="email" autocomplete="off" type="text" placeholder="Enter Email Address"
+                            required />
+                        <span id="email_error" class="text-danger error"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="field form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" maxlength="11" class="form-control" name="phone" autocomplete="off" type="text" placeholder="Enter Phone Number"
+                            required />
+                        <span id="phone_error" class="text-danger error"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="field form-group">
+                        <label for="subject">Subject</label>
+                        <input id="subject" maxlength="80" class="form-control" name="subject" autocomplete="off" type="text" placeholder="Subject"
+                        />
+                        <span id="subject_error" class="text-danger error"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="field form-group">
+                        <label for="description">Description</label>
+                        <textarea id="textdata" name="description" class="form-control" autocomplete="off" placeholder="Description"></textarea>
+                        <span id="textdata_error" class="text-danger error"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <div class="field">
+                        <input type="submit" onClick="return validation()" name="submit" class="btn btn-primary btn-block">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

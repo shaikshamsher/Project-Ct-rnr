@@ -1,0 +1,261 @@
+<!--  *ngIf="isSuburbsDataLoaded" -->
+<div class="search-section banner-image">
+    <div class="container property-fields">
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <!--  <h1>Content Here</h1> -->
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class=" property-searchfield">
+                    <h3>Find Properties for Rent</h3>
+                    <div *ngIf="selectedRecordType != 'Attorney' && selectedRecordType != 'Plumber' && selectedRecordType != 'Photographer'">
+                        <div class="col-sm-12 mb15">
+                            <span class="ui-fluid">
+                                <p-autoComplete [(ngModel)]="suburbs" [ngClass]="isSuburbSearchValid ? 'errorfield' : ''" class="form-control" [suggestions]="filteredCountriesMultiple"
+                                    (completeMethod)="filterCountryMultiple($event)" styleClass="wid100" [minLength]="1" placeholder="Search by Suburb"
+                                    field="Suburb" [multiple]="true">
+                                    <ng-template let-country pTemplate="item">
+                                        {{country.Suburb}}, {{country.Province}}
+                                    </ng-template>
+                                </p-autoComplete>
+                            </span>
+                        </div>
+
+                        <div class="col-sm-12 mb5">
+                            <ng-multiselect-dropdown [placeholder]="'Property Type'" [data]="optionsData" [(ngModel)]="optionsModel" [settings]="dropdownSettings"
+                                (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                        <form [formGroup]="setNewForm" class='form-inputs'>
+                            <div class="col-sm-6 mb15 mt20 dropdown-fields">
+                                <p class="mb10">No of Bedrooms</p>
+                                <label class="radio-container">1+
+                                    <input (change)="radioBedsChange($event)" formControlName="setBedsValue" value="1" type="radio" checked="checked" name='setBedsValue'>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">2+
+                                    <input type="radio" (change)="radioBedsChange($event)" name='setBedsValue' formControlName="setBedsValue" value="2">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">3+
+                                    <input type="radio" (change)="radioBedsChange($event)" name='setBedsValue' formControlName="setBedsValue" value="3">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">4+
+                                    <input type="radio" (change)="radioBedsChange($event)" name='setBedsValue' formControlName="setBedsValue" value="4">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">5+
+                                    <input type="radio" (change)="radioBedsChange($event)" name='setBedsValue' formControlName="setBedsValue" value="5">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6 mb15 mt20 dropdown-fields">
+                                <p class="mb10">No of Bathrooms</p>
+                                <label class="radio-container">1+
+                                    <input type="radio" (change)="radioBathsChange($event)" checked="checked" name='setBathValue' formControlName="setBathValue"
+                                        value="1">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">2+
+                                    <input type="radio" (change)="radioBathsChange($event)" name='setBathValue' formControlName="setBathValue" value="2">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">3+
+                                    <input type="radio" (change)="radioBathsChange($event)" name='setBathValue' formControlName="setBathValue" value="3">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">4+
+                                    <input type="radio" (change)="radioBathsChange($event)" name='setBathValue' formControlName="setBathValue" value="4">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">5+
+                                    <input type="radio" (change)="radioBathsChange($event)" name='setBathValue' formControlName="setBathValue" value="5">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-12 mb15 dropdown-fields">
+                                <p class="mb10">Select Price Range</p>
+                                <ion-range-slider #priceElement type="double" [min]="1" [max]="5" from="0" to="0" [values]="priceData" grid="true" decorate_both="false"
+                                    (onChange)="minPriceOnChange($event)">
+                                </ion-range-slider>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col-sm-4 mt30 col-sm-offset-4">
+                        <div class="row">
+                            <button (click)="btnListingSearch()" class="btn btn-primary btn-block" [disabled]="isSearchDisabled">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="search-main">
+    <div class="container related-cities pt30">
+        <div class="states-links">
+            <div class="col-xs-12">
+                <h4>Click on a province to find rental properties by cities</h4>
+            </div>
+            <div class="list-group">
+                <div class="col-md-4 col-sm-6">
+                    <a [routerLink]="" (click)="btnProvince('Gauteng')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Gauteng</a>
+                    <a [routerLink]="" (click)="btnProvince('Western Cape')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Western Cape</a>
+                    <a [routerLink]="" (click)="btnProvince('Kwazulu Natal')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Kwazulu Natal</a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a [routerLink]="" (click)="btnProvince('Eastern Cape')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Eastern Cape</a>
+                    <a [routerLink]="" (click)="btnProvince('Northern Cape')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Northern Cape</a>
+                    <a [routerLink]="" (click)="btnProvince('North West')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> North West</a>
+                </div>
+                <div class="col-md-4 col-sm-6 hidden-sm">
+                    <a [routerLink]="" (click)="btnProvince('Free State')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Free State</a>
+                    <a [routerLink]="" (click)="btnProvince('Limpopo')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Limpopo</a>
+                    <a [routerLink]="" (click)="btnProvince('Mpumalanga')" class="list-group-item">
+                        <i class="fa fa-link" aria-hidden="true"></i> Mpumalanga</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div *ngIf="selectedRecordType != 'Attorney' && selectedRecordType != 'Plumber' && selectedRecordType != 'Photographer'">
+            <ng-container *ngIf="isSuburbWithSingleRecord">
+                <div class="head-container mb20">
+                    <h2 class="heading">Rental Properties in {{suburbName}}</h2>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="isMultipleSuburbsSelected">
+                <div class="head-container mb20">
+                    <h2 class="heading">Rental Properties in multiple areas</h2>
+
+                </div>
+            </ng-container>
+            <ng-container *ngIf="isRelatedCities" class="mt20">
+
+                <div class="detail-section mb30">
+                    <h4 class="mt0 mb20 pt0">Related Cities</h4>
+                    <div class="row">
+                        <div *ngFor="let cities of relatedCities" class="col-md-2 mb20 col-sm-4">
+                            <a (click)="onCityClick(cities)">{{cities}}</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="isProvinceRelatedCities" class="mt20">
+
+                <div class="detail-section mb30">
+                    <h4 class="mt0 mb20 pt0">Rental Properties by cities</h4>
+                    <div class="row">
+                        <div *ngFor="let cities of relatedCities" class="col-md-3 mb20 col-sm-4">
+                            <a (click)="provinceCityClick(cities.suburb)">{{cities.suburb}} ({{cities.count}})</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="row">
+                <ng-container *ngIf="isListingImg">
+                    <div class="container-fluid">
+                        <div class="order-by">
+                            <p>
+                            <strong>Order by:</strong>
+                            <button *ngIf="isAsc" (click)="btnAsc()" type="button" class="btn btn-primary btn-sm mr20">
+                                <i class="fa fa-chevron-circle-up" title="Ascending Order" aria-hidden="true"></i>Price - Low to High
+                            </button>
+                            <button *ngIf="isDesc" (click)="btnDesc()" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-chevron-circle-down" aria-hidden="true" title="Descending Order"></i>Price - High to Low
+                            </button> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" *ngFor="let listItem of propertySearchData.listings">
+                        <div class="poperty-list-item" (click)="propertyDetailsClick(listItem.listingID,listItem.PropertyReferencenumber)">
+                            <div class="ribbon-price">
+                                <span>{{listItem.ListingPrice}} per month</span>
+                            </div>
+                            <span class="porperty-image" *ngIf="listItem.images">
+                                <img [src]="listItem.images[0].imageurl" />
+                            </span>
+                            <div class="container-fluid">
+                                <h3 class="property-title">{{listItem.Title}}</h3>
+                                <p>Available from: {{listItem.Availablefrom | date:'yyyy-MMM-dd'}}</p>
+                            </div>
+                            <div class="property-caption container-fluid">
+                                <i class="fa fa-check-circle" aria-hidden="true"></i> {{listItem.Bedrooms}} Beds &nbsp; &nbsp;
+                                <i class="fa fa-check-circle" aria-hidden="true"></i> {{listItem.Bathrooms}} Bath &nbsp; &nbsp;
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                <span class="wordwrap-sm wordwrap"> {{listItem.Suburb}}</span>
+                            </div>
+                            <div class="company-logo container-fluid text-center" *ngIf="(listItem.PrimaryContactDetails.CompanyLogo && listItem.PrimaryContactDetails.CompanyLogo != 'By Owner')">
+                                <span>
+                                    <img [src]="listItem.PrimaryContactDetails.CompanyLogo" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <!--   <div class="row">
+            <div *ngIf="selectedRecordType === 'Attorney' || selectedRecordType === 'Plumber' || selectedRecordType === 'Photographer'">
+                <ng-container>
+                    <div class="head-container mb20">
+                        <h2 class="heading">{{selectedRecordType}}s in {{suburbName}}</h2>
+                    </div>
+                </ng-container>
+                <div class="col-md-4 col-sm-6" *ngFor="let vendor of vendorDetails">
+                    <div class="visting-list">
+                        <div class="vistiting-content">
+                            <div class="mb20 " *ngIf="vendor.Companylogo">
+                                <img class="imgborder" [src]="vendor.Companylogo" />
+                            </div>
+                            <h3 class="mt5 mb20" *ngIf="vendor.Companyname">
+                                {{vendor.Companyname}}
+                            </h3>
+                            <p class="mb20" *ngIf="vendor.RegisterNumber">Reg Number:
+                                <strong>{{vendor.RegisterNumber}}</strong>
+                            </p>
+                            <p class="mb20" *ngIf="vendor.vendornumber">Vendor Number:
+                                <strong>{{vendor.vendornumber}}</strong>
+                            </p>
+                            <p class="mb20 capitalize" *ngIf="vendor.Lastname">Name:
+                                <strong>{{vendor.Firstname + ' ' + vendor.Lastname}}</strong>
+                            </p>
+                            <p class="mb20" *ngIf="vendor.Address || vendor.suburb">Address:
+                                <br />
+                                <strong>{{vendor.Address}}</strong>
+                                <br /> Suburb:
+                                <strong>{{vendor.suburb}}</strong>
+                            </p>
+                            <p class="mb20" *ngIf="vendor.Emailid">Email Address:
+                                <br />
+                                <strong>{{vendor.Emailid}}</strong>
+                            </p>
+                            <p class="mb20">
+                                <span *ngIf="vendor.OfficeNumber">
+                                    <i class="fa fa-mobile" aria-hidden="true"></i> {{vendor.OfficeNumber}}</span>
+                                <span class='mr20 hidden-xs'></span>
+                                <span *ngIf="vendor.MobileNumber">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> {{vendor.MobileNumber}}</span>
+                            </p>
+                        </div>
+                        <div class="website" *ngIf="vendor.Website">
+                            <i class="fa fa-globe" aria-hidden="true"></i> {{vendor.Website}}</div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>

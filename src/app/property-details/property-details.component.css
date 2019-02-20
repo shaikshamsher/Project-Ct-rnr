@@ -1,0 +1,158 @@
+.property-content {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+}
+.property-content  .banner-image a, i, .property-content  .banner-image{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.property-content  .banner-image {
+    margin-bottom: 30px;
+}
+.property-content  .banner-image .fa {
+    padding-left: 6px;
+}
+
+.property-content .banner-image li:last-child .fa {
+    display: none;
+}
+
+agm-map {
+    height: 300px;
+  }
+
+.property-content .detail-section h3 {
+    color: #8e7600;
+    margin: 0;
+    padding: 0 0 20px;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: left;
+}
+
+.property-content h2, .property-content h3  {
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.property-content .banner-image h2 {
+    font-size: 40px;
+    margin-top: 40px;
+}
+.property-content .banner-image h3 {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.bath-bedrooms .label-default {
+    background-color: #0e173d;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+    padding-bottom: 10px;
+    margin-right: 20px;
+}
+
+.bath-bedrooms .label-default:last-child {
+    margin-right: 0;
+}
+
+.bath-bedrooms .badge {
+    background-color: #63540b;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.property-content .list-group .list-group-item {
+    border-right: 0;
+    border-left: 0;
+    font-weight: 600;
+}
+
+.property-content .list-group .list-group-item strong {
+    font-weight: 500;
+}
+
+.property-content .list-group-item:first-child,
+.property-content  .list-group-item:last-child {
+    border-radius: 0;
+}
+
+.property-content .pricedata{
+    font-size: 40px;
+    color: #404040;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.property-content .search-section {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.form-property .form-control {
+    border-radius: 0;
+    background-color: #ffffff;
+    border: 0;
+    border-bottom: 2px solid #ddd;
+    box-shadow: none;
+    height: 40px;
+}
+.form-property textarea.form-control {
+    height: 60px;
+}
+
+.form-property .form-control:focus {
+    outline: 0 !important;
+    border-bottom-color: #017ab3;
+}
+
+.form-property .form-control.error {
+    border-bottom-color: red;
+  }
+
+.property-content .carousel .item img {
+    transition: transform 1.5s;
+}
+
+.property-content .carousel .item img:hover {
+    transform: scale(1.1);
+}
+
+.countrycode {
+    border-bottom: 2px solid #ddd;
+    position: relative;
+    left: 15px;
+    top: 8px;
+}
+
+label:after {
+    content: '';
+}
+
+
+@media (max-width: 767px) {
+    .bath-bedrooms .label-default {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 20px; 
+        display: block;
+        font-size: 16px;
+    }
+
+    .bath-bedrooms .label-default .badge {
+        font-size: 14px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .bath-bedrooms .label-default:first-child {
+        margin-top: 10px;
+    }
+
+    .property-content .carousel {
+        margin-bottom: 30px;
+    }
+}

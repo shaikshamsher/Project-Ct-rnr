@@ -1,0 +1,44 @@
+.contact-us h2 {
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+}
+
+.contact-us .form-control { 
+    padding: 10px 0px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    border-bottom: 2px solid #e4e5e5;
+    color: rgba(128, 130, 133, 1);
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.contact-us label {
+    font-weight: 600;
+}
+
+.contact-us label::after {
+    content: ''
+}
+
+.contact-us .form-group {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.contact-us textarea.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-us .error {
+    position: absolute;
+    overflow: hidden;
+    bottom: -26px;
+}
+
+.contact-us .text-danger {
+    color: #d0021b;
+}

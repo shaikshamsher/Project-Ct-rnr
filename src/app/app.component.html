@@ -1,0 +1,17 @@
+<div class="container-fluid" id="wrapper">
+    <header class="row">
+        <app-header></app-header>
+    </header>
+    <main class="row" id="content">
+        <router-outlet></router-outlet>
+        
+    </main>
+    <footer class="row" id="footer">
+        <app-footer></app-footer>
+    </footer>
+</div>
+<div class="scroll-to-top" [ngClass]="{'show-scroll': navIsFixed}">
+    <button (click)="scrollToTop()" class="button-scrolltop">
+            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
+</div>

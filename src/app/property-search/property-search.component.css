@@ -1,0 +1,350 @@
+
+.poperty-list-item {
+    width: 100%;
+    background-color:#fff;
+    position: relative;
+    transition: all 1s;
+    margin-bottom: 30px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+}
+
+.poperty-list-item:hover {
+    transition: all 1s;
+    border-color: #0e173d;
+    cursor: pointer;
+    
+}
+
+.poperty-list-item .property-title {
+    color: #0e173d;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 18px;
+    white-space: nowrap;
+    margin: 30px 0 20px 0;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition:ease-in-out 1ms;
+}
+
+.poperty-list-item:hover .property-title {
+  color: #8e7600;
+}
+
+.property-caption {
+    color: #404040;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: 600;
+    overflow: hidden;
+}
+.property-price span {
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.property-price {
+    margin-bottom: 10px;
+}
+.porperty-image  {
+    display: block;
+    overflow: hidden;
+}
+
+.porperty-image img {
+    transition: transform 1.5s;
+}
+
+.porperty-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Orange Ribbon */
+
+.ribbon-price {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    z-index: 1;
+    overflow: hidden;
+    width: auto;
+    padding: 4px 20px;
+    background-color: #ef8e1c;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .company-logo {
+    border-top: 1px solid #efefef;
+    margin-top: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .search-main {
+    background-color: #f5f6f7;
+  }
+  .form-inputs .form-control {
+      min-height: 40px;
+      border-radius: 0;
+  }
+
+  .related-cities .detail-section a {
+    color: #0e173d;
+    transition: 0.3s;
+  }
+
+  .related-cities .detail-section a:hover,   .related-cities .detail-section a:focus {
+    color: #45538d;
+  }
+
+  .detail-section h4 {
+    color: #8e7600;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+
+.porperty-img {
+    background: url(./images/houseimage.png) no-repeat 0 0;
+    background-size: contain;
+    margin-top: 20px;
+    width:100%;
+    min-height: 225px;
+    margin-left: 40px;
+}
+
+.visting-list {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: .6s ease-in;
+  border: 1px solid #a4d2d2;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.visting-list:hover {
+  border-color:#008d5e;
+  background: #eff9eb;
+}
+
+.vistiting-content {
+  position: relative;
+  padding: 10px 15px 0;
+  padding-bottom: 0;
+  text-align: center;
+  font-size: 14px;
+  min-height: 300px;
+  max-height: 460px;
+}
+
+.vistiting-content h3 {
+  color: #0e173d;
+  font-weight: 300; 
+  font-size: 22px;
+}
+
+.vistiting-content .fa {
+  font-size: 22px;
+  color: #0e173d;
+  line-height: 22px;
+  margin-right: 6px;
+  position: relative;
+  top: 2px;
+}
+
+.imgborder {
+  border: 1px solid #a4d2d2;
+}
+
+.capitalize {
+  text-transform: uppercase;
+}
+
+.website {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background-color: #008d5e;
+  color: #e0f1eb;
+  overflow: hidden;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.website .fa {
+  font-size: 22px;
+  color: #ffffff;
+  line-height: 22px;
+  margin-right: 6px;
+  position: relative;
+  top: 2px;
+}
+
+.states-links {
+  background-color: #ffffff;
+  padding: 24px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.states-links .list-group-item:first-child {
+  border-radius: 0;
+}
+
+.states-links .list-group-item:last-child {
+  border-radius: 0;
+}
+.states-links .list-group-item {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 26px;
+  margin-bottom: 0;
+  color: #0e173d;
+
+}
+.states-links .list-group-item {
+  transition: .4s;
+}
+.states-links h4 {
+  color: #8e7600;
+}
+.states-links .list-group-item:hover, .states-links .list-group-item:focus {
+  background: none;
+  color: #8e7600;
+  border-bottom-color: #8e7600;
+}
+
+.states-links .list-group-item .fa {
+  font-size: 20px;
+  float: left;
+  margin-right: 8px;
+  position: relative;
+  top: 3px;
+}
+
+
+.radio-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 12px;
+  line-height: 16px
+}
+
+.radio-container:after {
+  content: none;
+}
+
+/* Hide the browser's default checkbox */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.radio-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  background-color: #ffffff;
+  border-radius: 50%;
+border: 1px solid #1e317e;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #ffffff;
+
+}
+
+/* When the checkbox is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  background-color: #ffffff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.radio-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.radio-container .checkmark:after {
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1e317e;
+}
+
+.order-by {
+  padding: 10px 15px;
+  border:  1px solid #dddddd;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.order-by p{
+  margin: 0;
+}
+
+.order-by .fa {
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 4px;
+  position: relative;
+  top: 2px;
+}
+
+.order-by .btn-primary {
+  background-color: #35ad0d;
+  border-color: #35ad0d;
+}
+.order-by .btn-primary:hover, 
+.order-by .btn-primary:focus, 
+.order-by .btn-primary:active
+{
+  background-color: #2a800d;
+  border-color: #2a800d;
+}
+
+@media (max-width: 1024px) {
+  .property-price span {
+    font-size: 16px;
+    line-height: 64px;
+}
+}
+
+@media (max-width: 600px) {
+  .pin-categories {
+    font-weight: 400;
+  }
+}
+
+

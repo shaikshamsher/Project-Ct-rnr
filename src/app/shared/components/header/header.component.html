@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1 class="logo">
+        <a [routerLink]="['/home']" [queryParams]="{ fromHome: 'true'}">RentandRent</a>
+      </h1>
+    </div>
+    <div class="col-sm-6 text-right global-links">
+      <ul class="list-inline login-links">
+        <li>
+          <a href="https://listurproperty.secure.force.com/rentandrent/" target="_blank">
+            <span> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</span> /
+            <span> <i class="fa fa-user-plus" aria-hidden="true"></i> Signup</span></a>
+        </li>
+        <li routerLinkActive='active'>
+          <a routerLink="/contact-us">
+            <i class="fa fa-envelope" aria-hidden="true"></i> Contact Us</a>
+        </li>
+      </ul>
+      <ul class="list-inline social-links">
+        <li>
+          <a href="https://www.facebook.com/rentandrentsouthafrica/" target="_blank">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/rentandrent-sa/" target="_blank">
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/u/0/100282526595190957926" target="_blank">
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/RentandRent_SA" target="_blank">
+              <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://in.pinterest.com/rentandrent/" target="_blank">
+              <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

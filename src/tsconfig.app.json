@@ -1,0 +1,22 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": []
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts",
+    "../node_modules/angular4-datepicker/src/my-date-picker/*.spec.ts"
+  ],
+  "include":[
+    "../node_modules/angular4-datepicker/src/my-date-picker/*.ts",
+    "../node_modules/angular4-datepicker/src/my-date-picker/directives/*.ts",
+    "../node_modules/angular4-datepicker/src/my-date-picker/interfaces/*.ts",
+    "../node_modules/angular4-datepicker/src/my-date-picker/services/*.ts",
+    "main.ts",
+    "*.ts"
+  ]
+}
